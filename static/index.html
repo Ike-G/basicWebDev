@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Server and client-side processing on the web</title>
+</head>
+<body>
+    <span>
+        <div class="top-centre-header">
+            <img src="" alt="Header image">
+            <a href="http://"></a> 
+        </div>
+        <div class="main-body">
+            <div class="questionWrap">
+                <div class="question">
+                    <h3>
+                        "It is possible for an application to require no client-side processing."
+                    </h3>
+                    <form>
+                        <div>
+                            <input type="radio" id="a" name="true">
+                            <label for="a">True</label><br> 
+                        </div>
+                        <div>
+                            <input type="radio" id="b" name="false">
+                            <label for="b">False</label><br>
+                        </div>
+                        <div>
+                            <input type="submit" value="Submit choice">
+                        </div>
+                    </form>
+                </div>
+                <div class="correctAnswer" style="display:none">
+                    <button class="accordion">Correct!</button>
+                    <div class="panel">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="incorrectAnswer" style="display:none">
+                    <button class="accordion">Incorrect.</button>
+                    <div class="panel">
+                        <p>Test data for incorrect answer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <h3>
+
+                </h3>
+                <form></form>
+            </div>
+            <div class="question"></div>
+        </div>
+        <div class="footer"></div>
+   </span>
+   <script type="application/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script type="application/json" id="clientData">
+    [
+        {
+            "a": "b"
+        }
+    ]
+   </script>
+   <script type="application/javascript" src="script.js"></script>
+</body>
+</html>
