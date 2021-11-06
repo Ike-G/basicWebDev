@@ -8,60 +8,300 @@
     <title>Server and client-side processing on the web</title>
 </head>
 <body>
-    <span>
+    <div class="background">
+        <!--
         <div class="top-centre-header">
             <img src="" alt="Header image">
             <a href="http://"></a> 
         </div>
+        -->
         <div class="main-body">
             <div class="questionWrap">
                 <div class="question">
-                    <h3>
+                    <h2>
                         "It is possible for an application to require no client-side processing."
-                    </h3>
+                    </h2>
                     <form>
-                        <div>
-                            <input type="radio" id="a" name="true">
-                            <label for="a">True</label><br> 
-                        </div>
-                        <div>
-                            <input type="radio" id="b" name="false">
-                            <label for="b">False</label><br>
-                        </div>
-                        <div>
-                            <input type="submit" value="Submit choice">
-                        </div>
+                        <label for="1a">
+                            <input type="radio" id="1a" name="1" value="t">True
+                        </label>
+                        <label for="1b">
+                            <input type="radio" id="1b" name="1" value="f">False
+                        </label>
+                        <input type="submit" value="Submit choice">
                     </form>
                 </div>
                 <div class="correctAnswer" style="display:none">
-                    <button class="accordion">Correct!</button>
+                    <button class="accordion inactive">Correct!</button>
                     <div class="panel">
-                        <p></p>
+                        <p>Both client-side and server-side processing is vital for any functional application.</p>
                     </div>
                 </div>
                 <div class="incorrectAnswer" style="display:none">
-                    <button class="accordion">Incorrect.</button>
+                    <button class="accordion inactive">Incorrect.</button>
                     <div class="panel">
-                        <p>Test data for incorrect answer</p>
+                        <p>Client-side processing is vital by the nature of the TCP/IP stack,
+                             as it is necessary for a client to remove the application layer after receiving 
+                             data. This may be as simple as interpreting plain HTML, or require the client's 
+                             machine to interpret Javascript present within the data sent.</p>
                     </div>
                 </div>
             </div>
-            <div class="question">
-                <h3>
-
-                </h3>
-                <form></form>
+            <div class="questionWrap">
+                <div class="question">
+                    <h2>
+                        Which of these languages can be used for client-side processing in web browsers?
+                    </h2>
+                    <form>
+                        <label>
+                            <input type="checkbox" name="2" id="2a" value="cs">C#
+                        </label>
+                        <label>
+                            <input type="checkbox" name="2" id="2b" value="js">Javascript
+                        </label>
+                        <label>
+                            <input type="checkbox" name="2" id="2c" value="php">PHP
+                        </label>
+                        <label>
+                            <input type="checkbox" name="2" id="2d" value="hs">Haskell
+                        </label>
+                        <label>
+                            <input type="checkbox" name="2" id="2e" value="ts">Typescript
+                        </label>
+                        <input type="submit" value="Submit choice">
+                    </form>
+                </div>
+                <div class="correctAnswer" style="display:none">
+                    <button class="accordion inactive">Correct!</button>
+                    <div class="panel">
+                        <p>Javascript and Typescript are the only two languages which can be used 
+                            for client-side scripting in the vast majority of web browsers. 
+                            PHP may be used for scripting, and so it is possible to incorporate it 
+                            into HTML, however this functionality doesn't extend beyond basic macros.</p>
+                    </div>
+                </div>
+                <div class="incorrectAnswer" style="display:none">
+                    <button class="accordion inactive">Incorrect.</button>
+                    <div class="panel">
+                        <p>Haskell and C# are both compiled languages, and therefore unsuitable 
+                            for client-side operations. Haskell is a functional language, and thus
+                             its primary use comes in its ability to work without side effects, 
+                             making it far more useful in server-side contexts due to its atomicity. 
+                             C# is imperative, and therefore does not fit the same mold, but like 
+                             other languages in the C family it is advantageous for its proximity 
+                             to machine code, making it unsuitable for client-side operations where 
+                             processes must be standardised across browsers utilising wildly different 
+                             hardware and design patterns. PHP is a scripting language, however it is 
+                             used primarily for server-side scripting. Javascript and Typescript are 
+                             primarily used for this purpose due to their universal object design 
+                             allowing for scripts to be standardised across different browsers by 
+                             abstracting out hardware details.</p>
+                    </div>
+                </div>
             </div>
-            <div class="question"></div>
+            <div class="questionWrap">
+                <div class="question">
+                    <h2>
+                        Which of these are advantages of processing data client-side?
+                    </h2>
+                    <form>
+                        <label>
+                            <input type="checkbox" name="3" id="3a" value="security">
+                                Security - By passing data to be processed by the client, the server
+                                is no longer solely responsible for the data of all clients, and the 
+                                integrity of the server is no longer critical to security.
+                        </label>
+                        <label>
+                            <input type="checkbox" name="3" id="3b" value="speed">
+                                Speed - The client can process data faster than the server, and 
+                                therefore by sending data to be processed by the client the website will 
+                                be more responsive.
+                        </label>
+                        <label>
+                            <input type="checkbox" name="3" id="3c" value="consistency">
+                                Consistency - Client-side processing can guarantee consistent response
+                                times irrespective of server connectivity.
+                        </label>
+                        <label>
+                            <input type="checkbox" name="3" id="3d" value="load">
+                                Reduced server load - By tasking the client's machine with data processing,
+                                an application can reduce the strain on its own servers to process and
+                                send data.
+                        </label>
+                        <input type="submit" value="Submit choice">
+                    </form>
+                </div>
+                <div class="correctAnswer" style="display:none">
+                    <button class="accordion inactive">Correct!</button>
+                    <div class="panel">
+                        <p>Client-side processing may make applications more consistent in their response times
+                            by removing the need to regularly connect to a server, and reduce the strain placed upon the server.
+                            This does not come with a guaranteed reduction in speed however, as the client's hardware
+                            may be far worse than the server's. In a client-server architecture it also does (at best) little 
+                            to improve security, as the server is always ultimately responsible for any data sent.
+                        </p>
+                    </div>
+                </div>
+                <div class="incorrectAnswer" style="display:none">
+                    <button class="accordion inactive">Incorrect.</button>
+                    <div class="panel">
+                        <p>Client-side processing may make applications more consistent in their response times
+                            by removing the need to regularly connect to a server, and reduce the strain placed upon the server.
+                            This does not come with a guaranteed reduction in speed however, as the client's hardware
+                            may be far worse than the server's. In a client-server architecture it also does (at best) little 
+                            to improve security, as the server is always ultimately responsible for any data sent.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="questionWrap">
+                <div class="question">
+                    <h2>
+                        Where should confidential data (such as answers to a quiz) be stored?
+                    </h2>
+                    <form>
+                        <label>
+                            <input type="radio" name="4" id="4a" value="client">Client-side
+                        </label>
+                        <label>
+                            <input type="radio" name="4" id="4b" value="server">Server-side
+                        </label>
+                        <label>
+                            <input type="radio" name="4" id="4c" value="both">Both
+                        </label>
+                        <input type="submit" value="Submit choice">
+                    </form>
+                </div>
+                <div class="correctAnswer" style="display:none">
+                    <button class="accordion inactive">Correct!</button>
+                    <div class="panel">
+                        <p>Any data sent to the client is accessible by the client, and therefore if
+                            it is to be kept confidential subject to the actions of a user it should be
+                            stored server-side, where the client cannot access it.
+                        </p>
+                    </div>
+                </div>
+                <div class="incorrectAnswer" style="display:none">
+                    <button class="accordion inactive">Incorrect.</button>
+                    <div class="panel">
+                        <p>Any data sent to the client is accessible by the client, and therefore if
+                            it is to be kept confidential subject to the actions of a user it should be
+                            stored server-side, where the client cannot access it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="questionWrap">
+                <div class="question">
+                    <h2>
+                        Where have the answers to this quiz been stored?
+                    </h2>
+                    <form>
+                        <label>
+                            <input type="radio" name="5" id="5a" value="client">Client-side
+                        </label>
+                        <label>
+                            <input type="radio" name="5" id="5b" value="server">Server-side
+                        </label>
+                        <label>
+                            <input type="radio" name="5" id="5c" value="both">Both
+                        </label>
+                        <input type="submit" value="Submit choice">
+                    </form>
+                </div>
+                <div class="correctAnswer" style="display:none">
+                    <button class="accordion inactive">Correct!</button>
+                    <div class="panel">
+                        <p>Even the answers stored server-side aren't secure in this website,
+                            as you can see if you run <code>fetch('serverData.json')</code> in 
+                            the console. Normally however one can store data more securely by 
+                            writing more nuanced GET callbacks.
+                        </p>
+                    </div>
+                </div>
+                <div class="incorrectAnswer" style="display:none">
+                    <button class="accordion inactive">Incorrect.</button>
+                    <div class="panel">
+                        <p>Ctrl/Cmd + Shift + C → <code>&lt;script type="application/json" id="clientData"&gt;...&lt;/script&gt;</code></p>
+                    </div>
+                </div>
+            </div>
+            <div class="questionWrap">
+                <div class="question">
+                    <h2>
+                        "The client-server model is a specific case of the peer-to-peer model."
+                    </h2>
+                    <form>
+                        <label>
+                            <input type="radio" name="6" id="6a" value="t">True
+                        </label>
+                        <label>
+                            <input type="radio" name="6" id="6b" value="f">False
+                        </label>
+                        <input type="submit" value="Submit choice">
+                    </form>
+                </div>
+                <div class="correctAnswer" style="display:none">
+                    <button class="accordion inactive">Correct!</button>
+                    <div class="panel">
+                        <p>
+                            The peer-to-peer model may be used to describe any multi-agent system
+                            wherein agents have the capability of sharing resources with one another.
+                        </p>
+                    </div>
+                </div>
+                <div class="incorrectAnswer" style="display:none">
+                    <button class="accordion inactive">Incorrect.</button>
+                    <div class="panel">
+                        <p>
+                            Although the peer-to-peer model is typically used to describe instances of 
+                            multi-agent systems where agents are explicitly equipotent, the client-server
+                            model is an instance of a peer-to-peer network wherein many nodes are reliant 
+                            on a single node for the performance of a task. In practice, the distinction 
+                            exists primarily in that client-server relationships are unidirectional,
+                            as the server is minimally reliant on the client, however it should not be
+                            forgotten that this remains just a specific convention within a peer-to-peer system.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer"></div>
-   </span>
+        <div class="placeholder"></div>
+        <footer>
+            <p>Background image generated in <a href="https://github.com/Ike-G/lowpoly.git">https://github.com/Ike-G/lowpoly.git</a> using the art <i>Vast Universe</i> by Michal Kváč.<br>
+            Website source repository: <a href="https://github.com/Ike-G/basicWebDev.git">https://github.com/Ike-G/basicWebDev.git</a></p>
+        </footer>
+    </div>
+   <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
    <script type="application/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script type="application/json" id="clientData">
     [
-        {
-            "a": "b"
-        }
+        [
+            {
+                "name": "1",
+                "value": "f" 
+            }
+        ],
+        [
+            {
+                "name": "2",
+                "value": "js"
+            },
+            {
+                "name": "2",
+                "value": "ts"
+            }
+        ],
+        [
+            {
+                "name": "3",
+                "value": "consistency"
+            },
+            {
+                "name": "3",
+                "value": "load"
+            }
+        ]
     ]
    </script>
    <script type="application/javascript" src="script.js"></script>

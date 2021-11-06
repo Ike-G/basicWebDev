@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 :root {
+    font-size: 16px;
     --colour-1: #000000;
     --colour-2: #ffffff;
     --colour-3: #98b0a8;
@@ -7,33 +10,178 @@
 }
 
 *, *:after, *:before {
-    font-family:'Courier New', Courier, monospace;
+    font-family: "Inter", sans-serif;
     color: var(--colour-1);
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
 
 body {
-    background-color: var(--colour-2);
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+	font-size: 1.25rem;
+    margin:0;
 }
 
-span > div {
-	width: 90%;
-	max-width: 600px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5rem;
-	margin-bottom: 5rem;
+a {
+    position: relative;
+    color: turquoise;
+    font-weight: 450;
+    text-decoration: none;
 }
 
-div+div {
-    margin-top: .5rem;
+a:hover {
+    color: turquoise;
+    font-weight: 450;
 }
 
-.top-centre-header {
-    background-color: var(--colour-4);
+a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: turquoise;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.background {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-image: url(background.png);
+    width: 100%;
 }
 
 .main-body {
+    z-index: 10;
+    position: relative;
+	width: 75%;
+    height: 100%;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1.5rem;
     font-size: small;
+    background-color: #ffffff;
+    -moz-box-shadow: 0 0 0.8rem #000;
+    -webkit-box-shadow: 0 0 0.8rem #000;
+    box-shadow: 0 0 0.8rem #000;
+}
+
+div+div {
+    margin-top: 1rem;
+}
+
+label+label {
+    margin-top: 0.5rem;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+input { 
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+form {
+    margin: 0.5em;
+}
+
+input[type=submit] {
+    margin-top: 1rem;
+    padding: 0.625rem 1.25rem;
+    background-color: darkturquoise;
+    border: 1px solid #ddd;
+    color: white;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(0, 99, 100);
+    -webkit-transition: background-color 150ms linear;
+    -ms-transition: background-color 150ms linear;
+    transition: background-color 150ms linear;
+    cursor: pointer;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 0.125rem solid gray;
+    outline: none;
+    margin-right: 0.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 0 0 1.25rem;
+}
+
+input[type="radio"] {
+    border-radius: 0.625rem;
+    vertical-align: -0.25rem;
+}
+
+input[type="checkbox"] {
+    border-radius: 0.25rem;
+    vertical-align: -0.5rem;
+}
+
+input:disabled {
+    opacity: 50%;
+}
+
+input[type="radio"]::before {
+    display: block;
+    content: " ";
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 0.625rem;
+    background-color: red;
+    font-size: 1.2em;
+    transform: translate(0.1875rem, 0.1875rem) scale(0);
+    transform-origin: center;
+    transition: all 0.3s ease-in;
+}
+
+input[type="checkbox"]::before {
+    display: block;
+    content: " ";
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 0.625rem;
+    background-color: red;
+    font-size: 1.2em;
+    transform: translate(0.1875rem, 0.1875rem) scale(0);
+    transform-origin: center;
+    transition: all 0.3s ease-in;
+}
+
+input[type="radio"]:checked::before {
+    transform: translate(0.1875rem, 0.1875rem) scale(1);
+    transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: translate(0.1875rem, 0.1875rem) scale(1);
+    transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 1.5);
 }
 
 .question {
@@ -49,9 +197,14 @@ div+div {
 }
 
 .accordion {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    padding: 1rem;
     width: 100%;
     text-align: left;
     border: none;
@@ -59,17 +212,97 @@ div+div {
     transition: 0.4s;
 }
 
-.active, .accordion:hover {
-    background-color: #ccc;
+.accordion:hover {
+    filter: brightness(60%);
+}
+
+.accordion:after {
+    float: right;
+	right: .75rem;
+    content: "↑";
+    border-radius: 50%;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	background-color: #000;
+    font-size: 1rem;
+}
+
+.inactive:after {
+    transform: translateY(0rem); /*rotate(360deg);*/
+    transition: transform 500ms ease;
+	color: #FFF;
+}/*"↓"*/
+
+.active:after {
+    transform: rotate(-180deg);
+    transition: transform 500ms ease;
+    color: #777;
+    /*content: "↑";*/
 }
 
 .panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
+    padding: 0 1em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
-.footer {
-    
+.incorrectAnswer > .panel {
+    background-color: red;
+}
+
+.correctAnswer > .panel {
+    background-color: #00ff00;
+}
+
+.questionWrap {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 2px solid #000;
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+	padding: 1.5em;
+}
+
+.placeholder {
+    z-index: 1;
+    height: 7rem;
+    position: relative;
+    margin: 0;
+}
+
+footer {
+    z-index: 5;
+    position: fixed;
+	width: 75%;
+    height: 7rem;
+	max-width: 700px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1.5rem;
+    font-size: small;
+    background-color: #111111;
+    -moz-box-shadow: 0 0 0.8rem #000;
+    -webkit-box-shadow: 0 0 0.8rem #000;
+    box-shadow: 0 0 0.8rem #000;
+}
+
+footer > h2 {
+    color: #acacac;
+}
+
+footer > p {
+    color: #acacac;
+    font-weight:400;
+}
+
+footer > p > i { 
+    color: #acacac;
 }
